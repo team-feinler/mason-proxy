@@ -22,6 +22,12 @@ app.get('/priceandinventory/id/:productId', async (req, res) => {
   } catch (e) {
     res.status(500).send(err);
   }
-})
+});
+
+//add POST routes
+
+//add PUT route
+
+//add DELETE route
 
 app.listen(port, () => console.log(`listening on port ${port}`));
