@@ -15,8 +15,12 @@ app.use('/:id', express.static(`${__dirname}/../public`));
 
 app.get('/priceandinventory/id/:productId', async (req, res) => {
   const { productId } = req.params;
-  //forward productId to service using axios
-  //send response data to client w/ 200 code on success
+  try {
+    const { data } = await axios.get(`http://localhost:4003/priceandinventory/id/${productId}`);
+    res.status(200).send(data);
+  } catch (e) {
+    res.status(500).send(err);
+  }
 })
 
 app.listen(port, () => console.log(`listening on port ${port}`));
