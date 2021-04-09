@@ -29,4 +29,4 @@ scenarios:
             Content-Type: "application/json"
           beforeRequest: "createRequestBody"
 
-# to run this stress test in node: $(npm bin)/artillery dino
+# to run this stress test in node: $(npm bin)/artillery run stressTest.yml
