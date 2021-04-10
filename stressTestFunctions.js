@@ -1,7 +1,7 @@
 const faker = require('faker');
 
 const randomNumber = (lowerLimit, upperLimit) => {
-  return faker.random.number({min: lowerLimit, max: upperLimit});
+  return faker.datatype.number({min: lowerLimit, max: upperLimit});
 };
 
 const generateOneRecord = () => {

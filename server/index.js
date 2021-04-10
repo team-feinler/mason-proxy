@@ -40,7 +40,7 @@ app.post('/priceandinventory/id/multiple', async (req, res) => {
 
 app.post('/priceandinventory/id/createRecord', async (req, res) => {
   const newRecord = req.body;
-  console.log(req.body)
+  console.log('CREATE RECORD',req.body)
   try {
     await axios.post(`${ url }/priceandinventory/id/createRecord`, newRecord);
     res.sendStatus(200);
