@@ -13,11 +13,15 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "morgan": "^1.10.0"
+    "faker": "^5.5.3",
+    "morgan": "^1.10.0",
+    "newrelic": "^7.3.0"
   },
   "devDependencies": {
+    "artillery": "^1.6.2",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
     "nodemon": "^2.0.7"
   }

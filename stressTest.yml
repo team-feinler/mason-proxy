@@ -1,0 +1,32 @@
+config:
+  target: "http://localhost:3000"
+  processor: "stressTestFunctions.js"
+  phases:
+    - duration: 60
+      arrivalRate: 1
+      name: "testing one user per second for 60 second"
+    - pause: 10
+    - duration: 60
+      arrivalRate: 10
+      name: "Ten users per second for 60 seconds"
+    - pause: 10
+    - duration: 60
+      arrivalRate: 100
+      name: "100 users per second for 60 seconds"
+    - pause: 10
+    - duration: 60
+      arrivalRate: 1000
+      name: "1000 users per second for 60 seconds"
+scenarios:
+  - name: "Retrieve product price and inventory and write a new product to the database"
+    flow:
+      - get:
+          url: "/priceandinventory/id/9000000"
+          beforeRequest: "generateURLwithProductId"
+      - post:
+          url: "/priceandinventory/id/createRecord"
+          headers:
+            Content-Type: "application/json"
+          beforeRequest: "createRequestBody"
+
+# to run this stress test in node: $(npm bin)/artillery run stressTest.yml
