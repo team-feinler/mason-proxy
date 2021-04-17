@@ -21,10 +21,11 @@ app.use('/:id', express.static(`${__dirname}/../public`));
 app.get('/priceandinventory/id/:productId', async (req, res) => {
   const { productId } = req.params;
   try {
+    console.log('TARGET URL: ', `${ url }/priceandinventory/id/${ productId }`);
     const { data } = await axios.get(`${ url }/priceandinventory/id/${ productId }`);
-    console.log(data)
     res.status(200).send(data);
   } catch (e) {
+    console.log('ERROR IN GET ROUTE ON PROXY: ', e);
     res.status(500).send(e);
   }
 });
