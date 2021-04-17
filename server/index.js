@@ -22,6 +22,7 @@ app.get('/priceandinventory/id/:productId', async (req, res) => {
   const { productId } = req.params;
   try {
     const { data } = await axios.get(`${ url }/priceandinventory/id/${ productId }`);
+    console.log(data)
     res.status(200).send(data);
   } catch (e) {
     res.status(500).send(e);
