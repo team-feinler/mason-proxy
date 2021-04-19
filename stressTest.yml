@@ -18,7 +18,6 @@ config:
       arrivalRate: 1000
       name: "1000 users per second for 60 seconds"
 scenarios:
-  - name: "Retrieve product price and inventory and write a new product to the database"
     flow:
       - get:
           url: "/priceandinventory/id/9000000"
